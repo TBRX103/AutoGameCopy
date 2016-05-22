@@ -17,6 +17,9 @@
 package com.autogamecopy;
 
 import com.autogamecopy.util.Global;
+import java.awt.Desktop;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 
 /**
  *
@@ -30,6 +33,7 @@ public class AboutDialog extends javax.swing.JDialog {
     public AboutDialog(java.awt.Frame parent) {
         super(parent, true);
         initComponents();
+        init();
     }
 
     /**
@@ -45,7 +49,7 @@ public class AboutDialog extends javax.swing.JDialog {
         lblTitle = new javax.swing.JLabel();
         btnClose = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jXTextArea1 = new org.jdesktop.swingx.JXTextArea();
+        jEditorPane1 = new javax.swing.JEditorPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setModal(true);
@@ -74,15 +78,14 @@ public class AboutDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(20, 0, 10, 0);
         getContentPane().add(btnClose, gridBagConstraints);
 
-        jXTextArea1.setEditable(false);
-        jXTextArea1.setColumns(20);
-        jXTextArea1.setLineWrap(true);
-        jXTextArea1.setRows(5);
-        jXTextArea1.setText("Lorem ipsum dolor sit amet, blandit aliquando mei ex, esse alterum mediocrem usu no. Debet luptatum aliquando te nam, quo alii sumo ne. Ius in tantas voluptaria. Vix inermis inimicus pericula an, vis euismod senserit ei.\n\nSed an magna molestie quaestio, ut sed tale ignota dissentiunt. Pri no aperiam fuisset suavitate, intellegam intellegebat mea at. Sit no dolore graece, euismod salutatus moderatius eu nam, ornatus inermis petentium sea ne. Nec nullam impedit deleniti ex, mei inani praesent incorrupte ex.\n\nNulla debet te vix. Ad quo dolore constituto. Meliore invenire no eos, no mel cibo eius omittam, eum viris affert aperiam cu. Ea quem partem constituam ius, duo quaerendum theophrastus ei. Eum id accumsan elaboraret quaerendum, case singulis eu duo.\n\nVim habemus percipit interesset ea. Cu unum melius eum, sonet propriae vituperata duo at. His consulatu appellantur accommodare eu, omnium minimum adversarium usu id, ne per tritani laoreet omittam. Inani omnium at mel, tamquam oporteat pri ex, no etiam graeci mea. Ut tantas saperet his, ut vis nostro animal. Nam id dico officiis mediocrem, ius fugit clita et, liber iusto dicit ad pri.\n\nDiam fugit doctus et vis, mea no vitae moderatius, mea et quas convenire vituperatoribus. Falli dicunt vim ad, idque soleat aliquam no eam. Lobortis accommodare est ad. Te vide euismod accusata ius, movet democritum his in. Ei stet primis qui, at vero accusam democritum eos.");
-        jXTextArea1.setWrapStyleWord(true);
-        jXTextArea1.setCaretPosition(0);
-        jXTextArea1.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
-        jScrollPane1.setViewportView(jXTextArea1);
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        jEditorPane1.setEditable(false);
+        jEditorPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jEditorPane1.setContentType("text/html"); // NOI18N
+        jEditorPane1.setText("<html>\nDeveloped by: Benjamin Schellenberger\n<br>\n<br>\nIcons provided by <a href=\"https://icons8.com\">Icons8</a>\n</html>");
+        jEditorPane1.setOpaque(false);
+        jScrollPane1.setViewportView(jEditorPane1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -102,8 +105,26 @@ public class AboutDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
+    private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JScrollPane jScrollPane1;
-    private org.jdesktop.swingx.JXTextArea jXTextArea1;
     private javax.swing.JLabel lblTitle;
     // End of variables declaration//GEN-END:variables
+
+    private void init() {
+
+        jEditorPane1.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent hle) {
+                if (HyperlinkEvent.EventType.ACTIVATED.equals(hle.getEventType())) {
+                    System.out.println(hle.getURL());
+                    Desktop desktop = Desktop.getDesktop();
+                    try {
+                        desktop.browse(hle.getURL().toURI());
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
 }

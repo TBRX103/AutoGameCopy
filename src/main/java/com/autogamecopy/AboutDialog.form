@@ -53,6 +53,13 @@
       </Constraints>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <Properties>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder/>
+          </Border>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
       </AuxValues>
@@ -64,18 +71,17 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="org.jdesktop.swingx.JXTextArea" name="jXTextArea1">
+        <Component class="javax.swing.JEditorPane" name="jEditorPane1">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
-            <Property name="columns" type="int" value="20"/>
-            <Property name="lineWrap" type="boolean" value="true"/>
-            <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Lorem ipsum dolor sit amet, blandit aliquando mei ex, esse alterum mediocrem usu no. Debet luptatum aliquando te nam, quo alii sumo ne. Ius in tantas voluptaria. Vix inermis inimicus pericula an, vis euismod senserit ei.&#xa;&#xa;Sed an magna molestie quaestio, ut sed tale ignota dissentiunt. Pri no aperiam fuisset suavitate, intellegam intellegebat mea at. Sit no dolore graece, euismod salutatus moderatius eu nam, ornatus inermis petentium sea ne. Nec nullam impedit deleniti ex, mei inani praesent incorrupte ex.&#xa;&#xa;Nulla debet te vix. Ad quo dolore constituto. Meliore invenire no eos, no mel cibo eius omittam, eum viris affert aperiam cu. Ea quem partem constituam ius, duo quaerendum theophrastus ei. Eum id accumsan elaboraret quaerendum, case singulis eu duo.&#xa;&#xa;Vim habemus percipit interesset ea. Cu unum melius eum, sonet propriae vituperata duo at. His consulatu appellantur accommodare eu, omnium minimum adversarium usu id, ne per tritani laoreet omittam. Inani omnium at mel, tamquam oporteat pri ex, no etiam graeci mea. Ut tantas saperet his, ut vis nostro animal. Nam id dico officiis mediocrem, ius fugit clita et, liber iusto dicit ad pri.&#xa;&#xa;Diam fugit doctus et vis, mea no vitae moderatius, mea et quas convenire vituperatoribus. Falli dicunt vim ad, idque soleat aliquam no eam. Lobortis accommodare est ad. Te vide euismod accusata ius, movet democritum his in. Ei stet primis qui, at vero accusam democritum eos."/>
-            <Property name="wrapStyleWord" type="boolean" value="true"/>
-            <Property name="caretPosition" type="int" value="0"/>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Monospaced" size="12" style="0"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder/>
+              </Border>
             </Property>
+            <Property name="contentType" type="java.lang.String" value="text/html" noResource="true"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;Developed by: Benjamin Schellenberger&#xa;&lt;br&gt;&#xa;&lt;br&gt;&#xa;Icons provided by &lt;a href=&quot;https://icons8.com&quot;&gt;Icons8&lt;/a&gt;&#xa;&lt;/html&gt;"/>
+            <Property name="opaque" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
